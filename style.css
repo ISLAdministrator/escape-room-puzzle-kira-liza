@@ -6,12 +6,18 @@ You can change it, add to it, or delete it.
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #111;
   color: white;
   padding: 20px;
-}
-
-button {
-  padding: 10px;
-  font-size: 16px;
+  min-height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  overscroll-behavior: none;
+  
+  /* Add your background image here */
+  background-image: url('B3\ Design\ \(5\).png'); 
+  
+  /* These properties make sure the image fits the screen nicely */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
