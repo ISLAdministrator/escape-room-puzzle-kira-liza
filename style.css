@@ -20,4 +20,15 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
+  #start-button {
+  width: 1200px; 
+  cursor: pointer;
+  position: fixed;
+  
+  /* Try using pixels (px) instead of % */
+  top: 100px; 
+  left: 140px;
+}
+}
 }
