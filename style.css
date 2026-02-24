@@ -14,7 +14,7 @@ body {
   overscroll-behavior: none;
   
   /* Add your background image here */
-  background-image: url(').png'); 
+  background-image: url('start_button.png'); 
   
   /* These properties make sure the image fits the screen nicely */
   background-size: cover;
