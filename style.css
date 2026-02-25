@@ -5,21 +5,17 @@ You can change it, add to it, or delete it.
 */
 
 body {
-  font-family: Arial, sans-serif;
-  color: white;
-  padding: 20px;
-  min-height: 100vh;
-  margin: 0;
-  overflow: hidden;
-  overscroll-behavior: none;
 
-  /* Add your background image here */
-  background-image: url('entry_image_bg.png');
-
-  /* These properties make sure the image fits the screen nicely */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  #room-bg {
+    background-image: url('entry_image_bg.png');
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    overscroll-behavior: none;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 
   #start-button {
     width: 1200px;
@@ -32,15 +28,4 @@ body {
 
     #room2-bg
   }
-
-  /* Add your new background image here */
-  background-image: url('room2.png');
-
-  /* You still need these to make it fit the screen */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  min-height: 100vh;
-  margin: 0;
-}
 }
