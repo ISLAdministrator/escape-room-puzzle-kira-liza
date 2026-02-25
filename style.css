@@ -1,31 +1,23 @@
-/*
-This is a CSS comment :) Text just for humans, it is not part of the code
-Below is basic CSS styling.
-You can change it, add to it, or delete it.
-*/
+#room-bg {
+  /* YOU MUST CHANGE THE TEXT INSIDE THE QUOTES BELOW */
+  background-image: url('entry_image_bg.png');
 
-body {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
 
-  #room-bg {
-    background-image: url('entry_image_bg.png');
-    min-height: 100vh;
-    margin: 0;
-    overflow: hidden;
-    overscroll-behavior: none;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
+#start-button {
 
-  #start-button {
-    width: 1200px;
-    cursor: pointer;
-    position: fixed;
-
-    /* Try using pixels (px) instead of % */
-    top: 100px;
-    left: 140px;
-
-    #room2-bg
-  }
+  width: 1200px;
+  cursor: pointer;
+  position: fixed;
+  top: 100%;
+  left: 140%;
+background-color: red;
+  z-index: 10;
 }
