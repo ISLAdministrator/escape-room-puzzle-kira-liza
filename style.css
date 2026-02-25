@@ -12,12 +12,13 @@
 }
 
 #start-button {
-
-  width: 1200px;
+  width: 200px; /* Shrunk down to a normal button size */
   cursor: pointer;
-  position: fixed;
-  top: 100%;
-  left: 140%;
-background-color: red;
-  z-index: 10;
+  position: absolute; 
+  
+  /* The put it right in the dead center of your screen! */
+  top: 50%; 
+  left: 50%; 
+  
+  z-index: 10; 
 }
