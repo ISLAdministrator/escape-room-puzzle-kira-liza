@@ -12,22 +12,35 @@ body {
   margin: 0;
   overflow: hidden;
   overscroll-behavior: none;
-  
+
   /* Add your background image here */
-  background-image: url('entry_image_bg.png'); 
-  
+  background-image: url('entry_image_bg.png');
+
   /* These properties make sure the image fits the screen nicely */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
   #start-button {
-  width: 1200px; 
-  cursor: pointer;
-  position: fixed;
-  
-  /* Try using pixels (px) instead of % */
-  top: 100px; 
-  left: 140px;
+    width: 1200px;
+    cursor: pointer;
+    position: fixed;
+
+    /* Try using pixels (px) instead of % */
+    top: 100px;
+    left: 140px;
+
+    #room2-bg
+  }
+
+  /* Add your new background image here */
+  background-image: url('room2.png');
+
+  /* You still need these to make it fit the screen */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  margin: 0;
 }
 }
