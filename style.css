@@ -1,45 +1,33 @@
 #room-bg {
-  /* YOU MUST CHANGE THE TEXT INSIDE THE QUOTES BELOW */
   background-image: url('entry_image_bg.png');
-
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   min-height: 100vh;
   margin: 0;
   overflow: hidden;
-  overscroll-behavior: none;
 }
 
 #start-button {
-  width: 1000px; /* Shrunk down to a normal button size */
+  width: 1000px; 
   cursor: pointer;
   position: absolute; 
-  
-  /* The put it right in the dead center of your screen! */
   top: 25%; 
   left: 16%; 
-  
   z-index: 10; 
+  transition: transform 0.2s;
+}
 
-  #game-container {
+#game-container {
     width: 100vw;
     height: 100vh;
-    background-image: url('entry_image_bg.png'); /* Your initial background */
-    background-size: cover;
-    background-position: center;
+    /* Initially hidden or empty until button is clicked */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#start-buttonn {
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-/* This class will be added by JavaScript to hide the button */
+/* IMPORTANT: This must be outside of other brackets to work! */
 .hidden {
     display: none !important;
-}
 }
