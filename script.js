@@ -9,7 +9,7 @@ const output = document.getElementById("output");
 
 button.addEventListener("click", function () {
   output.textContent = "JavaScript is working.";
-}
+})
 
 // 1. Get the elements
 const startButton = document.getElementById('start-button');
