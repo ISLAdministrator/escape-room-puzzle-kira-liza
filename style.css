@@ -30,4 +30,38 @@
 /* IMPORTANT: This must be outside of other brackets to work! */
 .hidden {
     display: none !important;
+
+    #game-overlay {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('glowingdots.png'); /* Your new uploaded PNG */
+    background-size: cover;
+}
+
+.hotspot {
+    position: absolute;
+    width: 80px;  /* Adjust size to fit the glow */
+    height: 80px;
+    cursor: pointer;
+    border: 2px solid red; /* Uncomment this to see the boxes while you align them! */
+}
+
+/* Position each dot manually based on your image */
+#dot-left  { top: 35%; left: 10%; }
+#dot-desk  { top: 55%; left: 42%; }
+#dot-chair { top: 78%; left: 74%; }
+#dot-right { top: 35%; left: 88%; }
+
+#message-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+}
 }
