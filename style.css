@@ -21,4 +21,25 @@
   left: 16%; 
   
   z-index: 10; 
+
+  #game-container {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('entry_image_bg.png'); /* Your initial background */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#start-buttonn {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+/* This class will be added by JavaScript to hide the button */
+.hidden {
+    display: none !important;
+}
 }

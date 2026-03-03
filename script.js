@@ -9,4 +9,21 @@ const output = document.getElementById("output");
 
 button.addEventListener("click", function () {
   output.textContent = "JavaScript is working.";
-});
+}
+
+// 1. Get the elements
+const startButton = document.getElementById('start-button');
+const gameContainer = document.getElementById('game-container');
+
+// 2. The Click Function
+startButton.addEventListener('click', function() {
+    
+    // Change background - Just the filename!
+    gameContainer.style.backgroundImage = "url('room2.png')";
+    
+    // Hide the button
+    startButton.classList.add('hidden');
+
+    console.log("Success! Room switched.");
+}); 
+// ^ Make sure there is nothing after this line except maybe other functions.
