@@ -16,17 +16,32 @@
     left: 16%;
     z-index: 10;
     transition: transform 0.2s;
-} /* Close the start-button block here */
+}
 
 #game-container {
+    position: relative;
     width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-} /* Close the game-container block here */
+}
 
-/* This must be its own independent block */
+/* Base style for all dots */
+.dot {
+    position: absolute;
+    width: 50px; 
+    cursor: pointer;
+    z-index: 5;
+}
+
+/* Specific positions for your dots */
+#dot1 { top: 30%; left: 20%; }
+#dot2 { top: 50%; left: 45%; }
+#dot3 { top: 70%; left: 15%; }
+#dot4 { top: 40%; left: 80%; }
+
+/* The hidden class - keep this at the very bottom */
 .hidden {
     display: none !important;
 }
