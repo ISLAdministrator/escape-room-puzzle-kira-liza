@@ -6,7 +6,7 @@ const gameContainer = document.getElementById('game-container');
 // 2. The Logic
 startButton.addEventListener('click', function() {
     // Change the background image
-    roomBackground.style.backgroundImage = "url('room2.png')";
+    roomBackground.style.backgroundImage = "url('roomno2.png')";
     
     // Hide the start button
     startButton.classList.add('hidden');
