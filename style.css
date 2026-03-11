@@ -1,17 +1,82 @@
-/*
-This is a CSS comment :) Text just for humans, it is not part of the code
-Below is basic CSS styling.
-You can change it, add to it, or delete it.
-*/
-
-body {
-  font-family: Arial, sans-serif;
-  background-color: #111;
-  color: white;
-  padding: 20px;
+#room-bg {
+    background-image: url('entry_image_bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    background-color: #000;
 }
 
-button {
-  padding: 10px;
-  font-size: 16px;
+#start-button {
+    width: 1000px;
+    cursor: pointer;
+    position: absolute;
+    top: 25%;
+    left: 16%;
+    z-index: 10;
 }
+
+/* --- NEXT BUTTONS (bt1, bt2, bt3) --- */
+#next-level-btn, #next-level-btn-2, #next-level-btn-3 {
+    position: absolute;
+    width: 250px;
+    cursor: pointer;
+    z-index: 1000;
+    top: 75%;
+    left: 80%;
+    /* Added smooth transition for the new hover effect */
+    transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out; 
+}
+
+/* Specific Hover Effect for Next Buttons only */
+#next-level-btn:hover, #next-level-btn-2:hover, #next-level-btn-3:hover { 
+    transform: scale(1.1) translateY(-5px); /* Grows and lifts */
+    filter: drop-shadow(0px 0px 20px rgba(124, 255, 48, 0.8)); /* White glow */
+}
+
+/* --- INTERACTIVE DOTS & MESSAGES --- */
+.dot, .message { position: absolute; }
+.dot { width: 200px; cursor: pointer; z-index: 5; }
+
+/* Dot Coordinates */
+#dot1 { top: 54%; left: 37%; } 
+#dot2 { top: 80%; left: 70%; } 
+#dot3 { top: 30%; left: 5%; }  
+#dot4 { top: 30%; left: 83%; } 
+
+/* Message Coordinates */
+.message { width: 450px; z-index: 100; }
+#message-1 { top: 40%; left: 0%; } 
+#message-2 { top: 60%; left: 30%; } 
+#message-3 { top: 55%; left: 60%; } 
+#message-4 { top: 35%; left: 70%; } 
+
+/* --- LOCK HITBOX --- */
+#lock-hitbox {
+    position: absolute;
+    top: 44%; 
+    left: 38%;
+    width: 350px; 
+    height: 385px;
+    cursor: pointer;
+    z-index: 999; 
+    pointer-events: auto;
+}
+
+/* --- FINAL LINK BUTTON (linktonextwp.png) --- */
+#link-btn-img {
+    position: absolute;
+    width: 500px; 
+    top: 65%;    
+    left: 50%;   
+    transform: translateX(-50%);
+    cursor: pointer;
+    z-index: 1100;
+    transition: filter 0.3s, transform 0.2s;
+
+}
+
+/* --- VISIBILITY HELPER --- */
+.hidden { display: none !important; }

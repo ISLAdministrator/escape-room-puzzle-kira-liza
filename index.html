@@ -1,31 +1,43 @@
-<!--This is an HTML Comment, text just for humans :) It is not part of your code.
-Good coders use comments frequently to stay organized and communicate with collaborators.
-
-The code below is basic HTML for your puzzle.
-You can edit it, add to it, and delete parts of it.
-
-DO NOT let AI code for you!!
--->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Escape Room</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escape Room</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body id="room-bg"> 
 
-  <h1>Escape Room</h1>
+    <audio id="bg-music" loop preload="none">
+        <source src="COMP2022-12-01_-_Looking_For_Clues_-_www.FesliyanStudios.com 2.mp3" type="audio/mpeg">
+    </audio>
+  
+    <img src="start_button.png" id="start-button" alt="Start Game">
 
-  <p>
-    Write the story of your escape room here.
-  </p>
+    <div id="game-container" class="hidden">
+        <img src="glowingdot1.png" class="dot" id="dot1">
+        <img src="glowingdot2.png" class="dot" id="dot2">
+        <img src="glowingdot3.png" class="dot" id="dot3">
+        <img src="glowingdot4.png" class="dot" id="dot4">
 
-  <button id="button">Click me</button>
+        <img src="msg1.png" id="message-1" class="message hidden">
+        <img src="msg2.png" id="message-2" class="message hidden">
+        <img src="msg3.png" id="message-3" class="message hidden">
+        <img src="msg4.png" id="message-4" class="message hidden">
 
-  <p id="output"></p>
+        <img src="nextbt1.png" id="next-level-btn" class="hidden" alt="Next">
+    </div>
 
-  <script src="script.js"></script>
+    <div id="lock-container" class="hidden">
+        <div id="lock-hitbox"></div>
+        <img src="nextbt2.png" id="next-level-btn-2" class="hidden" alt="Read Note">
+        <img src="nextbt3.png" id="next-level-btn-3" class="hidden" alt="Final Page">
+
+        <a href="https://isladministrator.github.io/escape-room-puzzle-evan-and-noah/" id="final-link-wrapper" class="hidden" target="_blank">
+            <img src="linktonextwp.png" id="link-btn-img" alt="Next Website">
+        </a>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
