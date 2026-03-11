@@ -8,6 +8,7 @@ const lockBox = document.getElementById('lock-hitbox');
 const nextBtn1 = document.getElementById('next-level-btn');
 const nextBtn2 = document.getElementById('next-level-btn-2');
 const nextBtn3 = document.getElementById('next-level-btn-3');
+const finalLink = document.getElementById('final-link-wrapper');
 
 let musicStarted = false;
 
@@ -15,11 +16,10 @@ function playMusic() {
     if (music && !musicStarted) {
         music.volume = 0.3;
         music.load();
-        music.play().then(() => musicStarted = true).catch(e => console.log("Waiting for interaction"));
+        music.play().then(() => musicStarted = true).catch(e => console.log("Interaction needed"));
     }
 }
 
-// 1. Start Game
 startBtn.addEventListener('click', () => {
     playMusic();
     roomBg.style.backgroundImage = "url('roomnum2.png')";
@@ -27,15 +27,12 @@ startBtn.addEventListener('click', () => {
     gameCont.classList.remove('hidden');
 });
 
-// 2. Room 2 -> Lock Screen
 nextBtn1.addEventListener('click', () => {
     roomBg.style.backgroundImage = "url('clickthelock.png')";
     gameCont.classList.add('hidden');
     lockCont.classList.remove('hidden');
-    lockBox.style.display = "block";
 });
 
-// 3. Lock -> Success -> Show Button 2
 lockBox.addEventListener('click', () => {
     roomBg.style.backgroundImage = "url('locksuccess.png')";
     lockBox.style.display = "none";
@@ -43,25 +40,27 @@ lockBox.addEventListener('click', () => {
     nextBtn2.style.display = "block";
 });
 
-// 4. Success -> Note -> Show Button 3
 nextBtn2.addEventListener('click', () => {
     roomBg.style.backgroundImage = "url('notewithletter.png')";
     nextBtn2.classList.add('hidden');
     nextBtn2.style.display = "none";
-    
     nextBtn3.classList.remove('hidden');
     nextBtn3.style.display = "block";
 });
 
-// 5. Final Transition to Story Fin
+// FINAL TRANSITION
 nextBtn3.addEventListener('click', () => {
     roomBg.style.backgroundImage = "url('storyfin.png')";
     nextBtn3.classList.add('hidden');
     nextBtn3.style.display = "none";
-    console.log("Game Complete.");
+    
+    // Show the special link button
+    if (finalLink) {
+        finalLink.classList.remove('hidden');
+        finalLink.style.display = "block";
+    }
 });
 
-// Dot Interaction Function
 function setupDot(id, msgId, isFinal = false) {
     const d = document.getElementById(id);
     const m = document.getElementById(msgId);

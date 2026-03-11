@@ -62,4 +62,17 @@
 
 }
 
+/* SEPARATE CSS FOR THE FINAL LINK BUTTON */
+#link-btn-img {
+    position: absolute;
+    width: 300px; /* Different width example */
+    top: 80%;    /* Different position example */
+    left: 50%;   /* Centered example */
+    transform: translateX(-50%);
+    cursor: pointer;
+    z-index: 1100;
+    transition: filter 0.3s, transform 0.2s;
+
+}
+
 .hidden { display: none !important; }
