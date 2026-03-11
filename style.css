@@ -54,14 +54,14 @@
 /* HITBOX FIX */
 #lock-hitbox {
     position: absolute;
-    top: 40%; 
-    left: 45%;
-    width: 150px; 
-    height: 150px;
+    top: 44%; 
+    left: 38%;
+    width: 350px; 
+    height: 385px;
     cursor: pointer;
     z-index: 999; 
     pointer-events: auto;
-    background-color: rgba(255, 0, 0, 0.4);
+
 }
 
 .hidden { display: none !important; }
