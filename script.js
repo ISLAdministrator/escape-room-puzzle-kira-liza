@@ -14,25 +14,27 @@ let musicStarted = false;
 
 function playMusic() {
     if (music && !musicStarted) {
-        music.volume = 0.3;
-        music.load();
-        music.play().then(() => musicStarted = true).catch(e => console.log("Interaction needed"));
+        music.volume = 0.5;
+        music.play().then(() => musicStarted = true).catch(e => console.log("Music blocked"));
     }
 }
 
+// 1. Start Button Logic
 startBtn.addEventListener('click', () => {
     playMusic();
-    roomBg.style.backgroundImage = "url('roomnum2.png')";
+    roomBg.style.backgroundImage = "url('roomnum2.png')"; // Check spelling!
     startBtn.classList.add('hidden');
     gameCont.classList.remove('hidden');
 });
 
+// 2. Next 1 Logic
 nextBtn1.addEventListener('click', () => {
     roomBg.style.backgroundImage = "url('clickthelock.png')";
     gameCont.classList.add('hidden');
     lockCont.classList.remove('hidden');
 });
 
+// 3. Lock Logic
 lockBox.addEventListener('click', () => {
     roomBg.style.backgroundImage = "url('locksuccess.png')";
     lockBox.style.display = "none";
@@ -40,6 +42,7 @@ lockBox.addEventListener('click', () => {
     nextBtn2.style.display = "block";
 });
 
+// 4. Next 2 Logic
 nextBtn2.addEventListener('click', () => {
     roomBg.style.backgroundImage = "url('notewithletter.png')";
     nextBtn2.classList.add('hidden');
@@ -48,13 +51,11 @@ nextBtn2.addEventListener('click', () => {
     nextBtn3.style.display = "block";
 });
 
-// FINAL TRANSITION
+// 5. Next 3 Logic (Final)
 nextBtn3.addEventListener('click', () => {
     roomBg.style.backgroundImage = "url('storyfin.png')";
     nextBtn3.classList.add('hidden');
     nextBtn3.style.display = "none";
-    
-    // Show the special link button
     if (finalLink) {
         finalLink.classList.remove('hidden');
         finalLink.style.display = "block";
@@ -64,12 +65,14 @@ nextBtn3.addEventListener('click', () => {
 function setupDot(id, msgId, isFinal = false) {
     const d = document.getElementById(id);
     const m = document.getElementById(msgId);
+    if (!d || !m) return;
     d.addEventListener('click', (e) => {
         e.stopPropagation();
         m.classList.remove('hidden');
         if (isFinal) {
             d.classList.add('hidden');
             nextBtn1.classList.remove('hidden');
+            nextBtn1.style.display = "block";
         } else {
             setTimeout(() => {
                 m.classList.add('hidden');
