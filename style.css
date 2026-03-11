@@ -6,6 +6,7 @@
     min-height: 100vh;
     margin: 0;
     overflow: hidden;
+    background-color: #000;
 }
 
 #start-button {
@@ -15,9 +16,19 @@
     top: 25%;
     left: 16%;
     z-index: 10;
-    /* Smooth hover effect */
-    transition: transform 0.2s ease-in-out;
 }
+
+#next-level-btn, #next-level-btn-2 {
+    position: absolute;
+    width: 250px;
+    cursor: pointer;
+    z-index: 1000; /* Way above everything else */
+    top: 75%;
+    left: 80%;
+    transition: transform 0.2s;
+}
+
+#next-level-btn:hover, #next-level-btn-2:hover { transform: scale(1.1); }
 
 #game-container, #lock-container {
     position: relative;
@@ -25,65 +36,32 @@
     height: 100vh;
 }
 
-.dot, .message {
-    position: absolute;
-}
+.dot, .message { position: absolute; }
+.dot { width: 200px; cursor: pointer; z-index: 5; }
 
-.dot {
-    width: 200px; 
-    cursor: pointer;
-    z-index: 5;
-}
+/* Positions */
+#dot1 { top: 54%; left: 37%; } 
+#dot2 { top: 80%; left: 70%; } 
+#dot3 { top: 30%; left: 5%; }  
+#dot4 { top: 30%; left: 83%; } 
 
-/* DOT POSITIONS (Preserved from your screenshot) */
-#dot1 { top: 54%; left: 37%; } /* second dot */
-#dot2 { top: 80%; left: 70%; } /* third dot */
-#dot3 { top: 30%; left: 5%; }  /* first dot */
-#dot4 { top: 30%; left: 83%; } /* fourth dot */
+.message { width: 450px; z-index: 100; }
+#message-1 { top: 40%; left: 0%; } 
+#message-2 { top: 60%; left: 30%; } 
+#message-3 { top: 55%; left: 60%; } 
+#message-4 { top: 35%; left: 70%; } 
 
-/* MESSAGE POSITIONS (Mapped to Red Rectangles from your screenshot) */
-.message {
-    width: 450px;
-    z-index: 100;
-}
-
-#message-1 { top: 40%; left: 0%; }  /* Area of first red box */
-#message-2 { top: 60%; left: 30%; } /* Area of second red box */
-#message-3 { top: 55%; left: 60%; } /* Area of third red box */
-#message-4 { top: 35%; left: 70%; } /* Area of fourth red box */
-
-#next-level-btn {
-    position: absolute;
-    width: 250px;
-    cursor: pointer;
-    z-index: 150;
-    top: 75%;
-    left: 80%;
-    transition: transform 0.2s ease-in-out;
-}
-
-/* LOCK HITBOX - For the final interaction */
+/* HITBOX FIX */
 #lock-hitbox {
     position: absolute;
-    top: 45%; 
-    left: 37%;
-    width: 400px; 
-    height: 400px;
+    top: 40%; 
+    left: 45%;
+    width: 150px; 
+    height: 150px;
     cursor: pointer;
-    z-index: 200;
-    /* background-color: rgba(255, 0, 0, 0.4); /* Semi-transparent red for debugging */
+    z-index: 999; 
+    pointer-events: auto;
+    background-color: rgba(255, 0, 0, 0.4);
 }
 
-#next-level-btn, #next-level-btn-2 {
-    position: absolute;
-    width: 250px;
-    cursor: pointer;
-    z-index: 150;
-    top: 75%;
-    left: 80%;
-    transition: transform 0.2s ease-in-out;
-}
-
-.hidden {
-    display: none !important;
-}
+.hidden { display: none !important; }

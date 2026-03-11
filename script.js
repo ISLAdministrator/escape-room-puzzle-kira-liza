@@ -1,86 +1,70 @@
 const music = document.getElementById('bg-music');
-const startButton = document.getElementById('start-button');
-const roomBackground = document.getElementById('room-bg');
-const gameContainer = document.getElementById('game-container');
+const startBtn = document.getElementById('start-button');
+const roomBg = document.getElementById('room-bg');
+const gameCont = document.getElementById('game-container');
 const nextBtn1 = document.getElementById('next-level-btn');
 const nextBtn2 = document.getElementById('next-level-btn-2');
-const lockContainer = document.getElementById('lock-container');
-const lockHitbox = document.getElementById('lock-hitbox');
+const lockCont = document.getElementById('lock-container');
+const lockBox = document.getElementById('lock-hitbox');
 
-let hasStartedMusic = false;
+let musicStarted = false;
 
-function playGlobalMusic() {
-    if (music && !hasStartedMusic) {
-        music.volume = 0.5; 
-        music.load(); 
-        music.play().then(() => {
-            hasStartedMusic = true;
-        }).catch(err => console.log("Audio blocked. Waiting for click."));
+function playMusic() {
+    if (music && !musicStarted) {
+        music.volume = 0.3;
+        music.load();
+        music.play().then(() => musicStarted = true).catch(e => console.log("Click to play"));
     }
 }
 
-// 1. Start Button -> Room 2
-if (startButton) {
-    startButton.addEventListener('click', function() {
-        playGlobalMusic(); 
-        roomBackground.style.backgroundImage = "url('roomnum2.png')";
-        startButton.classList.add('hidden');
-        gameContainer.classList.remove('hidden');
+// 1. Start Game
+startBtn.addEventListener('click', () => {
+    playMusic();
+    roomBg.style.backgroundImage = "url('roomnum2.png')";
+    startBtn.classList.add('hidden');
+    gameCont.classList.remove('hidden');
+});
+
+// 2. Room 2 -> Lock Room
+nextBtn1.addEventListener('click', () => {
+    roomBg.style.backgroundImage = "url('clickthelock.png')";
+    gameCont.classList.add('hidden');
+    lockCont.classList.remove('hidden');
+    lockBox.style.display = "block"; // Explicitly enable hitbox
+});
+
+// 3. HITBOX -> Success
+lockBox.addEventListener('click', () => {
+    console.log("Lock Success!");
+    roomBg.style.backgroundImage = "url('locksuccess.png')";
+    lockBox.style.display = "none"; // Remove hitbox so it doesn't block button
+    nextBtn2.classList.remove('hidden');
+    nextBtn2.style.display = "block";
+});
+
+// 4. Success -> Final Note
+nextBtn2.addEventListener('click', () => {
+    roomBg.style.backgroundImage = "url('notewithletter.png')";
+    nextBtn2.classList.add('hidden');
+});
+
+// Dot Logic
+function setupDot(id, msgId, isFinal = false) {
+    const d = document.getElementById(id);
+    const m = document.getElementById(msgId);
+    d.addEventListener('click', (e) => {
+        e.stopPropagation();
+        m.classList.remove('hidden');
+        if (isFinal) {
+            d.classList.add('hidden');
+            nextBtn1.classList.remove('hidden');
+        } else {
+            setTimeout(() => {
+                m.classList.add('hidden');
+                d.classList.add('hidden');
+            }, 3000);
+        }
     });
-}
-
-// 2. Next Button 1 -> Lock Screen
-if (nextBtn1) {
-    nextBtn1.addEventListener('click', function() {
-        roomBackground.style.backgroundImage = "url('clickthelock.png')";
-        nextBtn1.classList.add('hidden');
-        gameContainer.classList.add('hidden'); // Clears all dots
-        lockContainer.classList.remove('hidden'); 
-    });
-}
-
-// 3. Lock Hitbox -> Success Screen
-if (lockHitbox) {
-    lockHitbox.addEventListener('click', function() {
-        roomBackground.style.backgroundImage = "url('locksuccess.png')";
-        // Hide hitbox so they can't click the lock again
-        lockHitbox.classList.add('hidden'); 
-        // Show the second button
-        if (nextBtn2) nextBtn2.classList.remove('hidden');
-    });
-}
-
-// 4. Next Button 2 -> Final Note
-if (nextBtn2) {
-    nextBtn2.addEventListener('click', function() {
-        roomBackground.style.backgroundImage = "url('notewithletter.png')";
-        // Hide button 2
-        nextBtn2.classList.add('hidden');
-        console.log("Showing the final note.");
-    });
-}
-
-// 5. Dot Logic
-function setupDot(dotId, messageId, isFinal = false) {
-    const dot = document.getElementById(dotId);
-    const msg = document.getElementById(messageId);
-
-    if (dot && msg) {
-        dot.addEventListener('click', function(e) {
-            e.stopPropagation(); 
-            msg.classList.remove('hidden');
-
-            if (isFinal) {
-                dot.classList.add('hidden');
-                if (nextBtn1) nextBtn1.classList.remove('hidden');
-            } else {
-                setTimeout(() => {
-                    msg.classList.add('hidden');
-                    dot.classList.add('hidden');
-                }, 3000); 
-            }
-        });
-    }
 }
 
 setupDot('dot3', 'message-1');
@@ -88,4 +72,4 @@ setupDot('dot1', 'message-2');
 setupDot('dot2', 'message-3');
 setupDot('dot4', 'message-4', true);
 
-document.addEventListener('click', playGlobalMusic);
+document.addEventListener('click', playMusic);
