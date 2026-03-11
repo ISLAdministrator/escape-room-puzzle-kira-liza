@@ -15,41 +15,74 @@
     top: 25%;
     left: 16%;
     z-index: 10;
+    /* Smooth hover effect */
+    transition: transform 0.2s ease-in-out;
 }
 
-#game-container {
+#game-container, #lock-container {
     position: relative;
     width: 100vw;
     height: 100vh;
-    /* Removed flexbox to prevent elements from bunching in the center */
 }
 
 .dot, .message {
     position: absolute;
-    cursor: pointer;
 }
 
 .dot {
     width: 200px; 
+    cursor: pointer;
     z-index: 5;
 }
 
-/* DOT POSITIONS (Preserved from your code) */
-#dot3 { top: 30%; left: 5%; }  /* First dot */
-#dot1 { top: 54%; left: 37%; } /* Second dot */
-#dot2 { top: 80%; left: 70%; } /* Third dot */
-#dot4 { top: 30%; left: 83%; } /* Fourth dot */
+/* DOT POSITIONS (Preserved from your screenshot) */
+#dot1 { top: 54%; left: 37%; } /* second dot */
+#dot2 { top: 80%; left: 70%; } /* third dot */
+#dot3 { top: 30%; left: 5%; }  /* first dot */
+#dot4 { top: 30%; left: 83%; } /* fourth dot */
 
-/* MESSAGE POSITIONS (Mapped to Red Rectangles) */
+/* MESSAGE POSITIONS (Mapped to Red Rectangles from your screenshot) */
 .message {
     width: 450px;
     z-index: 100;
 }
 
-#message-1 { top: 40%; left: 0%; } /* Area of first red box */
+#message-1 { top: 40%; left: 0%; }  /* Area of first red box */
 #message-2 { top: 60%; left: 30%; } /* Area of second red box */
 #message-3 { top: 55%; left: 60%; } /* Area of third red box */
 #message-4 { top: 35%; left: 70%; } /* Area of fourth red box */
+
+#next-level-btn {
+    position: absolute;
+    width: 250px;
+    cursor: pointer;
+    z-index: 150;
+    top: 75%;
+    left: 80%;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* LOCK HITBOX - For the final interaction */
+#lock-hitbox {
+    position: absolute;
+    top: 45%; 
+    left: 37%;
+    width: 400px; 
+    height: 400px;
+    cursor: pointer;
+    z-index: 200;
+    /* background-color: rgba(255, 0, 0, 0.4); /* Semi-transparent red for debugging */
+}
+
+#next-level-btn, #next-level-btn-2 {
+    position: absolute;
+    width: 250px;
+    cursor: pointer;
+    z-index: 150;
+    top: 75%;
+    left: 80%;
+    transition: transform 0.2s ease-in-out;
+}
 
 .hidden {
     display: none !important;

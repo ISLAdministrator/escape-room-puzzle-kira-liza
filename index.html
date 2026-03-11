@@ -1,27 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Escape Room</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Escape Room</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body id="room-bg"> 
+
+    <audio id="bg-music" loop preload="none">
+        <source src="COMP2022-12-01_-_Looking_For_Clues_-_www.FesliyanStudios.com 2.mp3" type="audio/mpeg">
+    </audio>
   
-  <img src="start_button.png" id="start-button" alt="Start Game">
+    <img src="start_button.png" id="start-button" alt="Start Game">
 
-  <div id="game-container" class="hidden">
-      <div id="game-overlay"></div>
-      <img src="glowingdot1.png" class="dot" id="dot1">
-      <img src="glowingdot2.png" class="dot" id="dot2">
-      <img src="glowingdot3.png" class="dot" id="dot3">
-      <img src="glowingdot4.png" class="dot" id="dot4">
+    <div id="game-container" class="hidden">
+        <img src="glowingdot1.png" class="dot" id="dot1">
+        <img src="glowingdot2.png" class="dot" id="dot2">
+        <img src="glowingdot3.png" class="dot" id="dot3">
+        <img src="glowingdot4.png" class="dot" id="dot4">
 
-      <img src="msg1.png" id="message-1" class="message hidden">
-      <img src="msg2.png" id="message-2" class="message hidden">
-      <img src="msg3.png" id="message-3" class="message hidden">
-      <img src="msg4.png" id="message-4" class="message hidden">
-  </div>
+        <img src="msg1.png" id="message-1" class="message hidden">
+        <img src="msg2.png" id="message-2" class="message hidden">
+        <img src="msg3.png" id="message-3" class="message hidden">
+        <img src="msg4.png" id="message-4" class="message hidden">
 
-  <script src="script.js"></script>
+        <img src="nextbt1.png" id="next-level-btn" class="hidden" alt="Next Level">
+        <img src="nextbtn2.png" id="next-level-btn-2" class="hidden" alt="Go to Note">
+    </div>
+
+    <div id="lock-container" class="hidden">
+        <div id="lock-hitbox"></div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
