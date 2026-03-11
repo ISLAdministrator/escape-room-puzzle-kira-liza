@@ -18,22 +18,20 @@
     z-index: 10;
 }
 
-#next-level-btn, #next-level-btn-2 {
+/* Update the grouped IDs to include the third button */
+#next-level-btn, #next-level-btn-2, #next-level-btn-3 {
     position: absolute;
     width: 250px;
     cursor: pointer;
-    z-index: 1000; /* Way above everything else */
+    z-index: 1000;
     top: 75%;
     left: 80%;
     transition: transform 0.2s;
 }
 
-#next-level-btn:hover, #next-level-btn-2:hover { transform: scale(1.1); }
-
-#game-container, #lock-container {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
+#next-level-btn:hover, #next-level-btn-2:hover, #next-level-btn-3:hover { 
+    transform: scale(1.1); 
+    
 }
 
 .dot, .message { position: absolute; }
